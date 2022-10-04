@@ -27,8 +27,6 @@ Do not use any "global" variables in this application
 
 ### Main Method
 
-This method is given to you. Do not change the method signature.
-
 1. The "Main" method should be:
 
 - ***static or instance***: static
