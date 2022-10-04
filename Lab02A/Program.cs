@@ -16,6 +16,9 @@ namespace NumberGameTwo
 
             Console.WriteLine($"You entered: {userNumber}");
 
+
+            //getting the array
+
             int[] numbers = new int[6];
             for (int i = 0; i < numbers.Length; i++)
             {
@@ -26,41 +29,42 @@ namespace NumberGameTwo
 
             }
 
+            //asking for numbers 
+
+            Console.WriteLine($"Select a number between 1 and {numbers.Length}.");
+            int pickedNumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter a number to divide by: ");
+            int divideNumber = Convert.ToInt32(Console.ReadLine());
+
+
+            //showing array
+
             Console.WriteLine("Array line : " + string.Join(",", numbers));
+            Console.WriteLine($"Your array length is: {numbers.Length}.");
+
+            
+            //sum
 
             int sum = numbers.Sum();
             Console.WriteLine($"Sum is: {sum}");
 
+            // product
 
-            Console.WriteLine($"Select a number between 1 and {numbers.Length}.");
-            int pickedNumber = Convert.ToInt32(Console.ReadLine());
             int product = pickedNumber * sum;
-            Console.WriteLine($"Product is: {product}");
+            Console.WriteLine($"{pickedNumber} * {sum} = {product}");
+            // Console.WriteLine($"Product is: {product}");
 
+            //quotient
 
-            Console.WriteLine("Enter a number to divide by: ");
-            int divideNumber = Convert.ToInt32(Console.ReadLine());
             Decimal dNum = Convert.ToDecimal(divideNumber);
             Decimal bigNum = Convert.ToDecimal(sum);
-            Decimal value = Decimal.Divide(bigNum, dNum );
-            Console.WriteLine($"Your quotient is : {value}");
+            Decimal value = Decimal.Divide(bigNum, dNum);
+            Console.WriteLine($"{bigNum} / {dNum} = {value}.");
 
 
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
