@@ -10,7 +10,6 @@ namespace NumberGameTwo
         }
         static void StartSequence()
         {
-
             Console.WriteLine("Enter a number greater than zero.");
             int userNumber = Convert.ToInt32(Console.ReadLine());
 
