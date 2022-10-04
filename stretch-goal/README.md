@@ -23,4 +23,3 @@ After reading the beginnings of the article above, read and complete [this tutor
 - How long did it take you
 - What did you find most helpful?
 - What did you find least helpful?
-- Wha
