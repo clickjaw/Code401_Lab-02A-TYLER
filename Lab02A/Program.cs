@@ -22,7 +22,7 @@ namespace NumberGameTwo
             decimal[] quotient = GetQuotient(product[0]);
 
             Console.WriteLine(
-            $"Array size: {numberArray.Length}\nYour Array: {String.Join(",", numberArray)}\nSum: {sum}\nProduct: {sum} * {numberArray[product[1] - 1]} = {product[0]}\nQuotient: {product[0]} / {quotient[1]} = {quotient[2]}");
+            $"Array size: {numberArray.Length}\nYour Array: {String.Join(", ", numberArray)}\nSum: {sum}\nProduct: {sum} * {numberArray[product[1] - 1]} = {product[0]}\nQuotient: {product[0]} / {quotient[1]} = {quotient[2]}");
         }
 
 
