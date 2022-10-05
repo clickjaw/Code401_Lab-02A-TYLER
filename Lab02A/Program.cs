@@ -32,7 +32,7 @@ namespace NumberGameTwo
             //asking for numbers 
 
             Console.WriteLine($"Select a number between 1 and {userNumber}.");
-            int pickedNumber = Convert.ToInt32(Console.ReadLine());
+            int productNumber = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter a number to divide by: ");
             int divideNumber = Convert.ToInt32(Console.ReadLine());
 
@@ -50,8 +50,8 @@ namespace NumberGameTwo
 
             // product
 
-            int product = pickedNumber * sum;
-            Console.WriteLine($"{pickedNumber} * {sum} = {product}");
+            int product = productNumber * sum;
+            Console.WriteLine($"{productNumber} * {sum} = {product}");
             // Console.WriteLine($"Product is: {product}");
 
             //quotient
