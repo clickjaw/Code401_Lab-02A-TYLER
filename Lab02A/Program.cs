@@ -12,25 +12,26 @@ namespace NumberGameTwo
         {
             Console.WriteLine("Enter a number greater than zero.");
             int userNumber = Convert.ToInt32(Console.ReadLine());
+            int [] numberArray = new int[userNumber];
 
             Console.WriteLine($"You entered: {userNumber}");
 
 
             //getting the array
 
-            int[] numbers = new int[6];
-            for (int i = 0; i < numbers.Length; i++)
+            // int[] numbers = new int[6];
+            for (int i = 0; i < userNumber; i++)
             {
 
-                Console.WriteLine($"Enter a number:  {i} of {numbers.Length}");
+                Console.WriteLine($"Enter a number: {i} of {userNumber}");
 
-                numbers[i] = Convert.ToInt32(Console.ReadLine());
+                numberArray[i] = Convert.ToInt32(Console.ReadLine());
 
             }
 
             //asking for numbers 
 
-            Console.WriteLine($"Select a number between 1 and {numbers.Length}.");
+            Console.WriteLine($"Select a number between 1 and {userNumber}.");
             int pickedNumber = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter a number to divide by: ");
             int divideNumber = Convert.ToInt32(Console.ReadLine());
@@ -38,13 +39,13 @@ namespace NumberGameTwo
 
             //showing array
 
-            Console.WriteLine("Array line : " + string.Join(",", numbers));
-            Console.WriteLine($"Your array length is: {numbers.Length}.");
+            Console.WriteLine("Array line : " + string.Join(",", numberArray));
+            Console.WriteLine($"Your array length is: {userNumber}.");
 
             
             //sum
 
-            int sum = numbers.Sum();
+            int sum = numberArray.Sum();
             Console.WriteLine($"Sum is: {sum}");
 
             // product
