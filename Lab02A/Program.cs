@@ -8,59 +8,87 @@ namespace NumberGameTwo
         {
             StartSequence();
         }
-        static void StartSequence()
+        static void StartSequence(){
         {
             Console.WriteLine("Enter a number greater than zero.");
             int userNumber = Convert.ToInt32(Console.ReadLine());
-            int [] numberArray = new int[userNumber];
-
             Console.WriteLine($"You entered: {userNumber}");
+
+            int[] numberArray = new int[userNumber];
+            numberArray = Populate(userNumber, numberArray);
+
+            int sum = GetSum(numberArray);
+            int[] product = GetProduct(numberArray, sum);
+            decimal[] quotient = GetQuotient(product[0]);
+
+            Console.WriteLine(
+            $"Array size: {numberArray.Length}\nYour Array: {String.Join(",", numberArray)}\nSum: {sum}\nProduct: {sum} * {numberArray[product[1] - 1]} = {product[0]}\nQuotient: {product[0]} / {quotient[1]} = {quotient[2]}");
+        }
+
 
 
             //getting the array
 
             // int[] numbers = new int[6];
-            for (int i = 0; i < userNumber; i++)
+            static int[] Populate(int userNumber, int[] numberArray)
             {
+                for (int i = 0; i < userNumber; i++)
+                {
 
-                Console.WriteLine($"Enter a number: {i} of {userNumber}");
+                    Console.WriteLine($"Enter a number: {i + 1} of {userNumber}");
 
-                numberArray[i] = Convert.ToInt32(Console.ReadLine());
+                    numberArray[i] = Convert.ToInt32(Console.ReadLine());
 
+                }
+                return numberArray;
             }
 
             //asking for numbers 
 
-            Console.WriteLine($"Select a number between 1 and {userNumber}.");
-            int productNumber = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter a number to divide by: ");
-            int divideNumber = Convert.ToInt32(Console.ReadLine());
+
+            // Console.WriteLine("Enter a number to divide by: ");
+            // int divideNumber = Convert.ToInt32(Console.ReadLine());
 
 
             //showing array
 
-            Console.WriteLine("Array line : " + string.Join(",", numberArray));
-            Console.WriteLine($"Your array length is: {userNumber}.");
+            // Console.WriteLine("Array line : " + string.Join(",", numberArray));
+            // Console.WriteLine($"Your array length is: {userNumber}.");
 
-            
+
             //sum
+            static int GetSum(int[] numberArray)
+            {
+                int sum = numberArray.Sum();
+                return sum;
+            }
 
-            int sum = numberArray.Sum();
-            Console.WriteLine($"Sum is: {sum}");
 
             // product
-
-            int product = productNumber * sum;
-            Console.WriteLine($"{productNumber} * {sum} = {product}");
+            static int[] GetProduct(int[] numberArray, int sum)
+            {
+                Console.WriteLine($"Select a number between 1 and {numberArray.Length}.");
+                int productNumber = Convert.ToInt32(Console.ReadLine());
+                int product = productNumber * sum;
+                int[] productArray = { product, productNumber };
+                return productArray;
+            }
             // Console.WriteLine($"Product is: {product}");
 
             //quotient
 
-            Decimal dNum = Convert.ToDecimal(divideNumber);
-            Decimal bigNum = Convert.ToDecimal(sum);
-            Decimal value = Decimal.Divide(bigNum, dNum);
-            Console.WriteLine($"{bigNum} / {dNum} = {value}.");
+            static Decimal[] GetQuotient(int product)
+            {
+                Console.WriteLine("Enter a number to divide by: ");
+                int divideNumber = Convert.ToInt32(Console.ReadLine());
 
+                Decimal dNum = Convert.ToDecimal(divideNumber);
+                Decimal bigNum = Convert.ToDecimal(product);
+                Decimal value = Decimal.Divide(bigNum, dNum);
+                // Console.WriteLine($"{bigNum} / {dNum} = {value}.");
+                Decimal[] quotientArray = { bigNum, dNum, value };
+                return quotientArray;
+            }
 
         }
     }
